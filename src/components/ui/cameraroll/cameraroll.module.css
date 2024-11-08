@@ -1,0 +1,58 @@
+.camera_roll_container {
+  padding: 2rem 0 3rem 0;
+  background-color: var(--bg-overlay-color);
+  border-bottom: 8px solid black;
+}
+.camera_title {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+.camera_title span {
+  display: block;
+  font-size: 33px;
+  font-weight: 200;
+}
+.left {
+  font-style: italic;
+}
+.right {
+  text-align: right;
+  font-family: "Cormorant SC", serif;
+  font-weight: 300;
+}
+.camera_roll_grid {
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+}
+.camera_roll_grid .mob_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mob_sm_container {
+  transform: scale(0.7);
+}
+@media (max-width: 750px) {
+  .camera_roll_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mob_container {
+    display: none !important;
+  }
+  .mob_sm_container {
+    display: flex !important;
+  }
+}
+@media (max-width: 520px) {
+  .camera_title {
+    padding: 0rem 1rem;
+    max-width: 100%;
+  }
+  .camera_roll_grid {
+    grid-template-columns: 1fr;
+  }
+}

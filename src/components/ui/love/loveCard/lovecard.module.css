@@ -1,0 +1,26 @@
+.card_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.card_container img {
+  width: 181px;
+  height: 181px;
+  border-radius: 50%;
+}
+.card_container p {
+  font-size: 18px;
+  /* font-family: "Cormorant SC", serif; */
+  font-weight: 200;
+  line-height: 1.5;
+  font-style: italic;
+}
+.card_container span {
+  margin-inline-start: 12px;
+  font-size: 25px;
+  font-style: normal;
+  font-family: "Cormorant SC", serif;
+}

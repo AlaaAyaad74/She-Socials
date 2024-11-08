@@ -1,0 +1,46 @@
+.loveNotes_Container {
+  padding: 2rem 0;
+}
+.loveNotes_Container h1 {
+  font-size: 40px;
+  font-weight: 100;
+  font-family: "Cormorant SC", serif;
+  margin: 0;
+  text-align: center;
+}
+.loveNotes_Container .caption {
+  text-align: center;
+  color: #242323;
+  margin-bottom: 2rem;
+  font-size: 23px;
+  font-weight: 200;
+}
+.content {
+  max-width: 991px;
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+.loveNotes_grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 265px 265px 300px;
+  align-items: start;
+  gap: 80px;
+  padding: 0 10px;
+  margin-bottom: 1.5rem;
+}
+.content a {
+  margin-right: initial;
+}
+@media (max-width: 1040px) {
+  .content {
+    max-width: 300px;
+    border-bottom: none;
+  }
+  .content a {
+    margin: 3rem auto 0;
+  }
+  .loveNotes_grid {
+    grid-template-columns: 300px;
+  }
+}

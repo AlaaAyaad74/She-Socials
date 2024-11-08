@@ -10,11 +10,11 @@ function CameraRoll() {
       <div className={styles.camera_roll_grid}>
         <div className={`${styles.mob_container} ${styles.mob_sm_container}`}>
           <div data-aos="fade-right">
-            <MobileFrame image="/2.jpg" />
+            <MobileFrame image="/2.jpeg" />
           </div>
         </div>
         <div className={styles.mob_container}>
-          <MobileFrame image="/2.jpeg" />
+          <MobileFrame image="/2.jpg" />
         </div>
         <div className={`${styles.mob_container} ${styles.mob_sm_container}`}>
           <div data-aos="fade-left">

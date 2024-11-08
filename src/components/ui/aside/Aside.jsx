@@ -2,7 +2,7 @@ import styles from "./Aside.module.css";
 import links from "../../../../data/links";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-function Aside({ isOpen }) {
+function Aside({ isOpen, setOpen }) {
   return (
     <aside>
       <div
@@ -12,7 +12,7 @@ function Aside({ isOpen }) {
       >
         <ul className={styles.links_List}>
           {links.map((link, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => setOpen(!isOpen)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles.active : "")}
                 to={`${link.path}`}
@@ -28,5 +28,6 @@ function Aside({ isOpen }) {
 }
 Aside.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 export default Aside;

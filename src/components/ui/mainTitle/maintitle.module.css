@@ -1,0 +1,30 @@
+.mainTitle_Container {
+  padding: 1.5rem 0 0.8rem 0;
+  border-bottom: 1px solid black;
+}
+.mainTitle_Container h1 {
+  margin: 0;
+  margin-inline-start: 14%;
+  font-size: 81px;
+  font-weight: 200;
+  animation-name: up;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+  line-height: 0.9;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  /* font-family: "Cormorant SC", serif; */
+}
+
+
+@keyframes up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

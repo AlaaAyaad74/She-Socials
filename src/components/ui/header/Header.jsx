@@ -37,7 +37,7 @@ function Header() {
             ))}
           </ul>
         </div>
-        <Aside isOpen={isOpen} />
+        <Aside isOpen={isOpen} setOpen={setOpen} />
       </nav>
     </header>
   );

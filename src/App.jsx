@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import HomePage from "./components/pages/homepage/HomePage";
 import { useEffect } from "react";
 import AOS from "aos";
+import Footer from "./components/ui/footer/Footer";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/how-we-work" element={<HowWeWork />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

@@ -1,7 +1,6 @@
 .camera_roll_container {
   padding: 2rem 0 3rem 0;
   background-color: var(--bg-overlay-color);
-  border-bottom: 8px solid black;
 }
 .camera_title {
   display: flex;

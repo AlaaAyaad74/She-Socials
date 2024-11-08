@@ -80,24 +80,26 @@ function Blog() {
           ))}
         </div>
         {showRightArrow && (
-          <Link
+          <button
             className={`${styles.arrow} ${styles.arrow__right}`}
+            style={{ border: "none", cursor: "pointer" }}
             onClick={moveSlidesRight}
           >
             <TfiAngleRight
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
             />
-          </Link>
+          </button>
         )}
         {showLeftArrow && (
-          <Link
+          <button
             className={`${styles.arrow} ${styles.arrow__left}`}
+            style={{ border: "none", cursor: "pointer" }}
             onClick={moveSlidesLeft}
           >
             <TfiAngleLeft
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
             />
-          </Link>
+          </button>
         )}
       </div>
       <div

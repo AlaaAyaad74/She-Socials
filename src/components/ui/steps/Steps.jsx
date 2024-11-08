@@ -58,7 +58,7 @@ function Steps({ steps }) {
         </React.Fragment>
       ))}
       <div className={styles.bottom_cont}>
-        <h1>Don't leave it another minute</h1>
+        <h1>Don&apos;t leave it another minute</h1>
         <Button path="/" width={191} value="INQUIRE" />
       </div>
     </section>

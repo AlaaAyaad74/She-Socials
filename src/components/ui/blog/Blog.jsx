@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import styles from "./blog.module.css";
 import { blogData } from "./data";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
-import { Link } from "react-router-dom";
+
 import MobileFrame from "../mobileframe/Mobile";
 import Button from "../button/Button";
 

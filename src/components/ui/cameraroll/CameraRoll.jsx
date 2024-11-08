@@ -14,7 +14,7 @@ function CameraRoll() {
           </div>
         </div>
         <div className={styles.mob_container}>
-          <MobileFrame image="/2.jpg" />
+          <MobileFrame image="/nancy.jpg" />
         </div>
         <div className={`${styles.mob_container} ${styles.mob_sm_container}`}>
           <div data-aos="fade-left">

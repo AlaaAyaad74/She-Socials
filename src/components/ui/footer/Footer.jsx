@@ -7,8 +7,8 @@ function Footer() {
       <div className={styles.main_grid_footer}>
         <div>
           <div className={styles.title}>
-            <span>Explore our latest work on</span>
-            <h1>Instagram</h1>
+            <span data-aos="fade-up">Explore our latest work on</span>
+            <h1 data-aos="fade-up">Instagram</h1>
           </div>
           <div className={styles.gallery}>
             <Link to="https://www.instagram.com/she__socials/">
@@ -36,10 +36,10 @@ function Footer() {
         </div>
         <div>
           <div className={styles.title}>
-            <span>Quick</span>
-            <h1>Menu</h1>
+            <span data-aos="fade-up">Quick</span>
+            <h1 data-aos="fade-up">Menu</h1>
           </div>
-          <ul>
+          <ul data-aos="fade-up">
             <li>
               <Link to="/">Home</Link>
             </li>

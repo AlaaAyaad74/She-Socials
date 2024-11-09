@@ -6,6 +6,7 @@ import HomePage from "./components/pages/homepage/HomePage";
 import { useEffect } from "react";
 import AOS from "aos";
 import Footer from "./components/ui/footer/Footer";
+import About from "./components/pages/about/About";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/how-we-work" element={<HowWeWork />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </Router>

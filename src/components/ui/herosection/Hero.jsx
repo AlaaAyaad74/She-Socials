@@ -2,7 +2,7 @@ import Button from "../button/Button";
 import styles from "./Hero.module.css";
 function Hero() {
   return (
-    <section className={styles.hero_Container}>
+    <section className={`${styles.hero_Container} edit_Main_Margin`}>
       <video
         src="./file.mp4"
         autoPlay

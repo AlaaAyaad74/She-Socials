@@ -53,6 +53,10 @@
     grid-template-columns: repeat(1, 1fr);
     height: auto;
   }
+  .img_container {
+    height: 400px;
+    order: -1;
+  }
   .bottom_cont {
     width: 96%;
   }

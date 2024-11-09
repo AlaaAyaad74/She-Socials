@@ -29,3 +29,13 @@ ul {
 a {
   text-decoration: none;
 }
+/* Add this to your CSS */
+
+.edit_Main_Margin {
+  margin-top: 111px;
+}
+@media (max-width: 1040px) {
+  .edit_Main_Margin {
+    margin-top: 84px;
+  }
+}

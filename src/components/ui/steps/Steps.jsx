@@ -16,11 +16,7 @@ function Steps({ steps }) {
               <div
                 className={styles.img_container}
                 style={{
-                  backgroundImage: `url('/love1.jpg')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundAttachment: "fixed",
+                  backgroundImage: `url(${item.img})`,
                 }}
               ></div>
               <div className={styles.step_content}>
@@ -43,14 +39,12 @@ function Steps({ steps }) {
                   <p key={i}>{paragraph}</p>
                 ))}
               </div>
+
               <div
                 className={styles.img_container}
                 style={{
-                  backgroundImage: `url('/love2.jpg')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundAttachment: "fixed",
+                  backgroundImage: `url(${item.img})`,
+                  backgroundPosition: "right center",
                 }}
               ></div>
             </div>

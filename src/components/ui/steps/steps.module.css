@@ -8,12 +8,17 @@
   height: 651px;
   margin: 2rem 0;
   overflow-y: hidden;
+  position: relative;
 }
 
 .img_container {
   width: 100%;
   height: 100%;
   position: relative;
+  background-size: 50% 100%;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .step_content {
   background-color: var(--bg-overlay-color);
@@ -54,6 +59,7 @@
     height: auto;
   }
   .img_container {
+    background-size: 100% 100%;
     height: 400px;
     order: -1;
   }

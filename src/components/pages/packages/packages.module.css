@@ -25,7 +25,6 @@
 @media (max-width: 1024px) {
   .package_grid {
     width: 96%;
-    
     display: flex;
     gap: 20px;
     flex-wrap: wrap;

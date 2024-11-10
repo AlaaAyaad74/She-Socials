@@ -1,0 +1,40 @@
+.main_package {
+  background-color: var(--bg-overlay-color);
+}
+.main_package h1 {
+  font-size: 87px;
+  font-weight: 300;
+}
+.package_grid {
+  display: grid;
+  width: 973px;
+  grid-template-columns: repeat(3, 311px);
+  gap: 20px;
+  margin: auto;
+  padding: 3rem 0;
+}
+.bottom_cont {
+  width: 650px;
+  margin: auto;
+  padding: 1rem 0 3rem 0;
+}
+.bottom_cont h1 {
+  font-size: 36px;
+  font-weight: 200;
+}
+@media (max-width: 1024px) {
+  .package_grid {
+    width: 96%;
+    
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .bottom_cont {
+    width: 96%;
+    text-align: center;
+  }
+}

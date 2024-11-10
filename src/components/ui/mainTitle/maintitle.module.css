@@ -1,5 +1,5 @@
 .mainTitle_Container {
-  padding: 1.5rem 0 0.8rem 0;
+  padding: 1.5rem 0 0.58rem 0;
   border-bottom: 1px solid black;
 }
 .mainTitle_Container h1 {
@@ -16,7 +16,6 @@
   animation-fill-mode: forwards;
   /* font-family: "Cormorant SC", serif; */
 }
-
 
 @keyframes up {
   0% {

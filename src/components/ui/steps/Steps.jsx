@@ -51,7 +51,7 @@ function Steps({ steps }) {
           )}
         </React.Fragment>
       ))}
-      <div className={styles.bottom_cont}>
+      <div className={styles.bottom_cont} data-aos="fade-up">
         <h1>Don&apos;t leave it another minute</h1>
         <Button path="/" width={191} value="INQUIRE" />
       </div>

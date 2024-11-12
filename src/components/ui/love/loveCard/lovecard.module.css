@@ -24,3 +24,14 @@
   font-style: normal;
   font-family: "Cormorant SC", serif;
 }
+@media (max-width: 440px) {
+  .card_container img {
+    width: 85% !important;
+    height: 85% !important;
+  }
+  .card_container p {
+    font-size: 12px;
+    margin-top: 0 !important;
+  }
+ 
+}

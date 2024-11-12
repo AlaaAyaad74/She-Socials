@@ -18,7 +18,7 @@
 }
 .right {
   text-align: right;
-  font-family: "Cormorant SC", serif;
+  /* font-family: "Cormorant SC", serif; */
   font-weight: 300;
 }
 .camera_roll_grid {
@@ -53,5 +53,21 @@
   }
   .camera_roll_grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .camera_title span {
+    text-align: center;
+    font-size: 25px;
+  }
+  .camera_roll_grid {
+    width: 350px;
+    grid-template-columns: repeat(2, 50%);
+    height: 300px;
+    align-content: center;
+  }
+  .mob_sm_container {
+    transform: scale(0.6);
   }
 }

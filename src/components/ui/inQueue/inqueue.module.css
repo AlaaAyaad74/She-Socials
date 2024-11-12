@@ -13,6 +13,7 @@
 .img_container {
   width: 230px;
   height: 344px;
+  position: relative;
 }
 .img_container img {
   width: 100%;
@@ -49,6 +50,7 @@
 .info a {
   margin-inline-start: 35px;
 }
+
 @media (max-width: 760px) {
   .main_Grid {
     grid-template-columns: 1fr;
@@ -59,5 +61,47 @@
   }
   .info a {
     margin: auto;
+  }
+}
+
+@media (max-width: 440px) {
+  .main_Grid {
+    display: flex;
+  }
+  .inquire_Section {
+    padding-top: 0;
+    padding-bottom: 2rem;
+    background-color: var(--bg-overlay-color);
+    border-bottom: 1px solid;
+    
+  }
+  .info h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+  .info p {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .img_container {
+    width: 160px;
+    height: 190px;
+    top: -14px;
+    right: -18px;
+  }
+  .img_container img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    right: -25px;
+  }
+  .inquire_Section a {
+    margin-inline-start: 5px;
+    scale: 0.7;
+    left: -30px;
+  }
+  .info {
+    margin: 10px 20px;
   }
 }

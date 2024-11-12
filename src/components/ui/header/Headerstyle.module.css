@@ -99,3 +99,8 @@
 .scroll_hidden {
   transform: translateY(-100%); /* Moves header up by 100% */
 }
+@media (max-width: 440px) {
+  .location p {
+    font-size: 9px;
+  }
+}

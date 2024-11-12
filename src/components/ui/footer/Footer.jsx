@@ -11,6 +11,11 @@ function Footer() {
             <h1 data-aos="fade-up">Instagram</h1>
           </div>
           <div className={styles.gallery}>
+            <img
+              className={styles.mobile_Logo}
+              src="/Shesocialslogo.webp"
+              alt="logo"
+            />
             <Link to="https://www.instagram.com/she__socials/">
               <img src="/social.jpg" alt="social" />
             </Link>
@@ -34,7 +39,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div>
+        <div className={styles.dis_menu_Mobile}>
           <div className={styles.title}>
             <span data-aos="fade-up">Quick</span>
             <h1 data-aos="fade-up">Menu</h1>

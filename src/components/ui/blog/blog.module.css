@@ -84,11 +84,11 @@
 @media (max-width: 440px) {
   .main__Cont {
     margin: auto;
-
     width: 100%;
   }
   .mobile_Container {
     width: 320px;
+    height: 200px;
     scale: 0.6;
   }
   .slider_container {
@@ -97,5 +97,15 @@
     grid-template-columns: repeat(9, 200px);
     gap: 10px;
     justify-items: center;
+    height: 290px;
+  }
+  .main_Title {
+    margin-bottom: 20px;
+  }
+  .view_All {
+    margin-top: 0;
+  }
+  .view_All h1 {
+    font-size: 30px;
   }
 }

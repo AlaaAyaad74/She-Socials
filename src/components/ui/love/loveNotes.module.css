@@ -44,3 +44,25 @@
     grid-template-columns: 300px;
   }
 }
+@media (max-width: 440px) {
+  .loveNotes_Container h1 {
+    font-size: 20px;
+  }
+  .loveNotes_Container .caption {
+    font-size: 18px;
+  }
+  .content {
+    width: 98%;
+    max-width: 98%;
+  }
+  .loveNotes_grid {
+    grid-template-columns: 32% 32% 32%;
+    gap: 2%;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid;
+  }
+  .content a {
+    margin: 1px 0 0 auto;
+  }
+}

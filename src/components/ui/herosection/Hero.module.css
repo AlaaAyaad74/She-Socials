@@ -47,3 +47,15 @@
     opacity: 1;
   }
 }
+@media (max-width: 440px) {
+  .content_container {
+    width: 75%;
+    top: 67%;
+  }
+  .content_container h1 {
+    font-size: 38px;
+  }
+  .special_Text {
+    font-size: 25px;
+  }
+}

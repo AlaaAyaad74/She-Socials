@@ -21,7 +21,6 @@
   font-size: 30px;
 }
 .main__Cont {
-  /* width: calc(100% - 50px); */
   overflow: hidden;
   position: relative;
   margin: auto;
@@ -85,13 +84,18 @@
 @media (max-width: 440px) {
   .main__Cont {
     margin: auto;
-    width: 96%;
+
+    width: 100%;
   }
   .mobile_Container {
-    width: 100%;
-    margin-inline-start: 15px;
+    width: 320px;
+    scale: 0.6;
   }
   .slider_container {
-    gap: 120px;
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(9, 200px);
+    gap: 10px;
+    justify-items: center;
   }
 }

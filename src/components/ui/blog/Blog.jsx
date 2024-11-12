@@ -58,7 +58,49 @@ function Blog() {
       setShowRightArrow(false); // Hide right arrow when at end
     }
   };
+  /** Mobile Screen **/
+  const mainWidthMobile = blogData.length * 202 - window.innerWidth;
+  const moveSlideRightMobile = () => {
+    if (mainWidthMobile > distance) {
+      if (mainWidthMobile > 0 && mainWidth - distance < 202) {
+        translateRef.current.style.transform = `translateX(0px)`;
+        setDistance(0);
+        setShowLeftArrow(false); // Hide left arrow when at start
+        return;
+      }
 
+      setDistance((prevDistance) => {
+        const newDistance = prevDistance + 210;
+        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
+
+        setShowLeftArrow(true); // Show left arrow
+        setShowRightArrow(newDistance < mainWidthMobile); // Hide right arrow if at end
+
+        return newDistance;
+      });
+    } else {
+      setDistance(0);
+      translateRef.current.style.transform = `translateX(0px)`;
+      setShowLeftArrow(false); // Hide left arrow when at start
+    }
+  };
+  const moveSlideLeftMobile = () => {
+    if (distance > 0) {
+      setDistance((prevDistance) => {
+        const newDistance = prevDistance - 210;
+        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
+
+        setShowRightArrow(true); // Show right arrow
+        setShowLeftArrow(newDistance > 0); // Hide left arrow if at start
+
+        return newDistance;
+      });
+    } else {
+      setDistance(mainWidthMobile);
+      translateRef.current.style.transform = `translateX(-${mainWidthMobile}px)`;
+      setShowRightArrow(false); // Hide right arrow when at end
+    }
+  };
   return (
     <section className={styles.blog_section}>
       <h1
@@ -83,7 +125,9 @@ function Blog() {
           <button
             className={`${styles.arrow} ${styles.arrow__right}`}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={moveSlidesRight}
+            onClick={
+              window.innerWidth > 440 ? moveSlidesRight : moveSlideRightMobile
+            }
           >
             <TfiAngleRight
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
@@ -94,7 +138,9 @@ function Blog() {
           <button
             className={`${styles.arrow} ${styles.arrow__left}`}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={moveSlidesLeft}
+            onClick={
+              window.innerWidth > 440 ? moveSlidesLeft : moveSlideLeftMobile
+            }
           >
             <TfiAngleLeft
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}

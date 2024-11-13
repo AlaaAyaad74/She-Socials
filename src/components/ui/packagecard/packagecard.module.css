@@ -82,3 +82,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 440px) {
+  .mainCard {
+    width: 100%;
+  }
+  .movePart img {
+    transform: translateX(0);
+  }
+  .mainCard button {
+    display: flex;
+    position: relative;
+    padding: 0.5rem 4rem 0.5rem 2rem;
+    font-size: 25px;
+    width: fit-content;
+  }
+  .mainCard button span {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    margin-inline-end: 10px;
+  }
+}

@@ -17,6 +17,15 @@
   /* font-family: "Cormorant SC", serif; */
 }
 
+@media (max-width: 440px) {
+  .mainTitle_Container {
+    padding: 0.5rem 0rem;
+  }
+  .mainTitle_Container h1 {
+    font-size: 45px !important;
+    margin-inline-start: 7%;
+  }
+}
 @keyframes up {
   0% {
     transform: translateY(100px);

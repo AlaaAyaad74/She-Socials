@@ -37,3 +37,25 @@
     text-align: center;
   }
 }
+@media (max-width: 440px) {
+  .edit_Main_Margin {
+    padding: 1rem 0 !important;
+  }
+  .package_grid {
+    padding: 1rem 0 0 0;
+    margin: 0;
+    width: 100%;
+    gap: 30px;
+  }
+  .bottom_cont {
+    width: 75%;
+  }
+  .bottom_cont h1 {
+    font-size: 25px;
+    font-weight: 200;
+  }
+  .bottom_cont a {
+    width: 150px !important;
+    font-size: 16px;
+  }
+}

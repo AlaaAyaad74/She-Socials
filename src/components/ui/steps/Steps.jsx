@@ -20,8 +20,10 @@ function Steps({ steps }) {
                 }}
               ></div>
               <div className={styles.step_content}>
-                <h1>{item.title}</h1>
-                <h2>{item.subTitle}</h2>
+                <div className={styles.mobile_Title}>
+                  <h1>{item.title}</h1>
+                  <h2>{item.subTitle}</h2>
+                </div>
                 {item.paragraphs.map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
@@ -33,8 +35,10 @@ function Steps({ steps }) {
               style={item.marginTop ? { marginTop: "4rem" } : null}
             >
               <div className={styles.step_content}>
-                <h1>{item.title}</h1>
-                <h2>{item.subTitle}</h2>
+                <div className={styles.mobile_Title}>
+                  <h1>{item.title}</h1>
+                  <h2>{item.subTitle}</h2>
+                </div>
                 {item.paragraphs.map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}

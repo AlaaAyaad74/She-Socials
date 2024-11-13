@@ -69,3 +69,46 @@
     width: 96%;
   }
 }
+@media (max-width: 440px) {
+  .main_Steps {
+    margin: 0;
+  }
+  .steps_grid {
+    margin-top: 1rem !important;
+    margin-bottom: 0;
+  }
+  .step_content {
+    padding: 1.5rem;
+  }
+  .mobile_Title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .step_content h1 {
+    font-size: 18px;
+    width: fit-content;
+    margin: 0;
+  }
+  .step_content h2 {
+    width: fit-content;
+    margin: 0;
+    font-size: 25px;
+  }
+  .step_content p {
+    margin-inline-start: 0;
+  }
+  .bottom_cont {
+    width: 96%;
+    margin: auto;
+    padding: 1rem 0 2rem 0;
+  }
+  .bottom_cont h1 {
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+  }
+  .bottom_cont a {
+    width: 150px !important;
+  }
+}

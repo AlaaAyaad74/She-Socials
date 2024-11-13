@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./blog.module.css";
 import { blogData } from "./data";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
@@ -10,10 +10,16 @@ function Blog() {
   const [distance, setDistance] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [widthScreen, setWidthScreen] = useState(window.innerWidth);
   const translateRef = useRef(null);
 
   const mainWidth = blogData.length * 366 - window.innerWidth;
+  /*** screen width ***/
 
+  useEffect(() => {
+    setWidthScreen(window.innerWidth);
+  }, []);
+  console.log(widthScreen);
   /**function that Moves Slides Right */
   const moveSlidesRight = () => {
     if (mainWidth > distance) {
@@ -125,9 +131,7 @@ function Blog() {
           <button
             className={`${styles.arrow} ${styles.arrow__right}`}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={
-              window.innerWidth > 440 ? moveSlidesRight : moveSlideRightMobile
-            }
+            onClick={widthScreen > 440 ? moveSlidesRight : moveSlideRightMobile}
           >
             <TfiAngleRight
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
@@ -138,9 +142,7 @@ function Blog() {
           <button
             className={`${styles.arrow} ${styles.arrow__left}`}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={
-              window.innerWidth > 440 ? moveSlidesLeft : moveSlideLeftMobile
-            }
+            onClick={widthScreen > 440 ? moveSlidesLeft : moveSlideLeftMobile}
           >
             <TfiAngleLeft
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}

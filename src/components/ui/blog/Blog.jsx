@@ -9,7 +9,7 @@ function Blog() {
   const [distance, setDistance] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const translateRef = useRef(null);
-  // console.log(screenWidth);
+  console.log(screenWidth);
   // Define item widths for responsive design
   const DESKTOP_ITEM_WIDTH = 366;
   const MOBILE_ITEM_WIDTH = 210;

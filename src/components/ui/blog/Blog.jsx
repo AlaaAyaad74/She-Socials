@@ -2,111 +2,42 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./blog.module.css";
 import { blogData } from "./data";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
-
 import MobileFrame from "../mobileframe/Mobile";
 import Button from "../button/Button";
 
 function Blog() {
   const [distance, setDistance] = useState(0);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
-  const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const translateRef = useRef(null);
 
-  const mainWidth = blogData.length * 366 - window.innerWidth;
-  /*** screen width ***/
+  // Define item widths for responsive design
+  const DESKTOP_ITEM_WIDTH = 366;
+  const MOBILE_ITEM_WIDTH = 210;
+  const itemWidth = screenWidth > 440 ? DESKTOP_ITEM_WIDTH : MOBILE_ITEM_WIDTH;
+  const maxTranslateX = blogData.length * itemWidth - screenWidth;
 
+  // Update screen width on resize
   useEffect(() => {
-    setWidthScreen(window.innerWidth);
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(widthScreen);
-  /**function that Moves Slides Right */
-  const moveSlidesRight = () => {
-    if (mainWidth > distance) {
-      if (mainWidth > 0 && mainWidth - distance < 354) {
-        translateRef.current.style.transform = `translateX(0px)`;
-        setDistance(0);
-        setShowLeftArrow(false); // Hide left arrow when at start
-        return;
-      }
 
-      setDistance((prevDistance) => {
-        const newDistance = prevDistance + 366;
-        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
+  // Move slides based on direction and screen size
+  const moveSlides = (direction) => {
+    setDistance((prevDistance) => {
+      let newDistance =
+        direction === "right"
+          ? prevDistance + itemWidth
+          : prevDistance - itemWidth;
 
-        setShowLeftArrow(true); // Show left arrow
-        setShowRightArrow(newDistance < mainWidth); // Hide right arrow if at end
-
-        return newDistance;
-      });
-    } else {
-      setDistance(0);
-      translateRef.current.style.transform = `translateX(0px)`;
-      setShowLeftArrow(false); // Hide left arrow when at start
-    }
+      // Ensure we don't scroll beyond bounds
+      newDistance = Math.max(0, Math.min(newDistance, maxTranslateX));
+      translateRef.current.style.transform = `translateX(-${newDistance}px)`;
+      return newDistance;
+    });
   };
 
-  /**function that Moves Slides Left */
-  const moveSlidesLeft = () => {
-    if (distance > 0) {
-      setDistance((prevDistance) => {
-        const newDistance = prevDistance - 366;
-        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
-
-        setShowRightArrow(true); // Show right arrow
-        setShowLeftArrow(newDistance > 0); // Hide left arrow if at start
-
-        return newDistance;
-      });
-    } else {
-      setDistance(mainWidth);
-      translateRef.current.style.transform = `translateX(-${mainWidth}px)`;
-      setShowRightArrow(false); // Hide right arrow when at end
-    }
-  };
-  /** Mobile Screen **/
-  const mainWidthMobile = blogData.length * 202 - window.innerWidth;
-  const moveSlideRightMobile = () => {
-    if (mainWidthMobile > distance) {
-      if (mainWidthMobile > 0 && mainWidth - distance < 202) {
-        translateRef.current.style.transform = `translateX(0px)`;
-        setDistance(0);
-        setShowLeftArrow(false); // Hide left arrow when at start
-        return;
-      }
-
-      setDistance((prevDistance) => {
-        const newDistance = prevDistance + 210;
-        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
-
-        setShowLeftArrow(true); // Show left arrow
-        setShowRightArrow(newDistance < mainWidthMobile); // Hide right arrow if at end
-
-        return newDistance;
-      });
-    } else {
-      setDistance(0);
-      translateRef.current.style.transform = `translateX(0px)`;
-      setShowLeftArrow(false); // Hide left arrow when at start
-    }
-  };
-  const moveSlideLeftMobile = () => {
-    if (distance > 0) {
-      setDistance((prevDistance) => {
-        const newDistance = prevDistance - 210;
-        translateRef.current.style.transform = `translateX(-${newDistance}px)`;
-
-        setShowRightArrow(true); // Show right arrow
-        setShowLeftArrow(newDistance > 0); // Hide left arrow if at start
-
-        return newDistance;
-      });
-    } else {
-      setDistance(mainWidthMobile);
-      translateRef.current.style.transform = `translateX(-${mainWidthMobile}px)`;
-      setShowRightArrow(false); // Hide right arrow when at end
-    }
-  };
   return (
     <section className={styles.blog_section}>
       <h1
@@ -123,26 +54,26 @@ function Blog() {
         <div className={styles.slider_container} ref={translateRef}>
           {blogData.map((item, index) => (
             <div key={index} className={styles.mobile_Container}>
-              <MobileFrame video="/file.mp4" key={index} />
+              <MobileFrame video="/file.mp4" />
             </div>
           ))}
         </div>
-        {showRightArrow && (
+        {distance < maxTranslateX && (
           <button
             className={`${styles.arrow} ${styles.arrow__right}`}
+            onClick={() => moveSlides("right")}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={widthScreen > 440 ? moveSlidesRight : moveSlideRightMobile}
           >
             <TfiAngleRight
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
             />
           </button>
         )}
-        {showLeftArrow && (
+        {distance > 0 && (
           <button
             className={`${styles.arrow} ${styles.arrow__left}`}
+            onClick={() => moveSlides("left")}
             style={{ border: "none", cursor: "pointer" }}
-            onClick={widthScreen > 440 ? moveSlidesLeft : moveSlideLeftMobile}
           >
             <TfiAngleLeft
               style={{ fill: "#fff", fontSize: "2.2rem", fontWeight: "500" }}
